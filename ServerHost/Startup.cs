@@ -27,6 +27,18 @@ namespace ServerHost
         {
 
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => builder.WithOrigins("http://localhost:5000")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials()
+                    .SetIsOriginAllowed((host) => true));
+            });
+
+            services.AddSignalR();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ServerHost", Version = "v1" });
@@ -43,13 +55,18 @@ namespace ServerHost
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ServerHost v1"));
             }
 
+
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/chatHub");
+
             });
         }
     }

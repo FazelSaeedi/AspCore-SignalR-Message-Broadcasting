@@ -27,3 +27,5 @@ D:\Projects\ASPNetCore\Server-Message-Broadcasting\ServerHost\obj\Debug\net5.0\S
 D:\Projects\ASPNetCore\Server-Message-Broadcasting\ServerHost\obj\Debug\net5.0\ref\ServerHost.dll
 D:\Projects\ASPNetCore\Server-Message-Broadcasting\ServerHost\obj\Debug\net5.0\ServerHost.pdb
 D:\Projects\ASPNetCore\Server-Message-Broadcasting\ServerHost\obj\Debug\net5.0\ServerHost.genruntimeconfig.cache
+D:\Projects\ASPNetCore\Server-Message-Broadcasting\ServerHost\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Projects\ASPNetCore\Server-Message-Broadcasting\ServerHost\bin\Debug\net5.0\System.Net.WebSockets.WebSocketProtocol.dll
