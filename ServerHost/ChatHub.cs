@@ -12,7 +12,9 @@ namespace ServerHost
 
         public override async Task OnConnectedAsync()
         {
-          
+            await Clients.Caller.SendAsync("ReceiveMessage" , "FTS" , DateTimeOffset.UtcNow , "Welcome User");
+
+            await base.OnConnectedAsync();
         }
 
 
